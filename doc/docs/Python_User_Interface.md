@@ -146,9 +146,9 @@ Attributes of `ModeSolver` whose values are set upon completion of the eigensolv
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 A list of the frequencies of each band computed for the last k point. Guaranteed to be sorted in increasing order. The frequency of band `b` can be retrieved via `ms.freqs[b - 1]`.
 
-**`all_freqs` [`NDArray`]**
+**`all_freqs` [`NDArray`]**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-An array of the frequencies computed at each k point for each band. The shape of the array is (m, n) for `m` k points and `n` bands. This is the same as `freqs` but with the extra k dimension in the data.
+An array of the frequencies computed at each k point for each band. The shape of the array is `(m, b)` for `m` k points and `b` bands. The band data is the same as `freqs`, but with the extra axis denoting the *index* of the associated k point in `k_points`. 
 
 **`iterations` [`integer`]**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
